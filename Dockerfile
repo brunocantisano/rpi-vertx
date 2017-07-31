@@ -17,7 +17,7 @@ RUN apt-get clean && apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 ENV VERTICLE_NAME io.vertx.sample.hello.HelloVerticle
-#ENV VERTICLE_FILE target/hello-verticle-3.4.2.jar
+ENV VERTICLE_FILE target/hello-verticle-3.2.0.jar
 
 # Set the location of the verticles
 ENV VERTICLE_HOME /usr/verticles
@@ -25,7 +25,7 @@ ENV VERTICLE_HOME /usr/verticles
 EXPOSE 8080
 
 # Copy your verticle to the container
-#COPY $VERTICLE_FILE $VERTICLE_HOME/
+COPY $VERTICLE_FILE $VERTICLE_HOME/
 
 # Launch the verticle
 WORKDIR $VERTICLE_HOME
