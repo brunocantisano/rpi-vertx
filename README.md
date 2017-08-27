@@ -19,13 +19,10 @@ docker pull paperinik/rpi-vertx
 
 Use cases
 
-Exposed ports and volumes
-----
+##Exposed ports and volumes
 The Vertx instance starts listening on the default port of `3000` on the container. Also, exports one volume: `/usr/verticles`, which contains vertx apps.
-This image uses environment variables to allow the configuration of some parameteres at run time:
-
-Environment variables
 ----
+##Environment variables
 * Variable name: `VERTICLE_NAME`
 * Default value: io.vertx.sample.hello.HelloVerticle
 * Description: you must inform a valid verticle name in order to run this container.
@@ -36,7 +33,7 @@ Environment variables
 * Description: you must inform a valid jar path in order to run this container.
 ----
 
-2) Run a container with a binded data directory:
+1) Run a container with a binded data directory:
 ```bash
 docker run --name vertx -d -p 9416:3000 \
            --env VERTICLE_NAME=io.vertx.sample.hello.HelloVerticle \
