@@ -8,6 +8,6 @@ public class HelloVerticle extends AbstractVerticle {
   public void start() throws Exception {
     vertx.createHttpServer().requestHandler(request -> {
       request.response().end("Hello Java world !");
-    }).listen(8080);
+    }).listen(3000);
   }
 }
