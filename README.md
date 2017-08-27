@@ -19,10 +19,10 @@ docker pull paperinik/rpi-vertx
 
 Use cases
 
-##Exposed ports and volumes
+## Exposed ports and volumes
 The Vertx instance starts listening on the default port of `3000` on the container. Also, exports one volume: `/usr/verticles`, which contains vertx apps.
 ----
-##Environment variables
+## Environment variables
 * Variable name: `VERTICLE_NAME`
 * Default value: io.vertx.sample.hello.HelloVerticle
 * Description: you must inform a valid verticle name in order to run this container.
