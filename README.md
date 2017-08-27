@@ -21,7 +21,7 @@ Use cases
 ----
 Exposed ports and volumes
 The Vertx instance starts listening on the default port of `3000` on the container. Also, exports one volume: `/usr/verticles`, which contains vertx apps.
-----
+
 Environment variables
 * Variable name: `VERTICLE_NAME`
 * Default value: io.vertx.sample.hello.HelloVerticle
