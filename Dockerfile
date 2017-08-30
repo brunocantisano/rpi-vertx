@@ -3,7 +3,7 @@
 # To build:
 #  docker build -t paperinik/rpi-vertx .
 # To run:
-#   docker run -t -i -p 9416:3000 paperinik/rpi-vertx
+#   docker run -t -i -p 9409:3000 paperinik/rpi-vertx
 ###
 FROM paperinik/rpi-java8:latest
 MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
