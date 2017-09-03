@@ -35,7 +35,7 @@ Environment variables
 
 1) Run a container with a binded data directory:
 ```bash
-docker run --name vertx -d -p 9416:3000 \
+docker run --name vertx -d -p 9409:3000 \
            --env VERTICLE_NAME=io.vertx.sample.hello.HelloVerticle \
            --env VERTICLE_FILE=target/hello-verticle-3.2.0.jar \
            -v /media/usbraid/docker/vertx:/usr/verticles \
