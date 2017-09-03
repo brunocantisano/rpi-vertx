@@ -39,6 +39,6 @@ VOLUME $VERTICLE_HOME
 # Launch the verticle
 WORKDIR $VERTICLE_HOME
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["$VERTICLE_HOME/entrypoint.sh"]
 
 CMD ["app:server"]
