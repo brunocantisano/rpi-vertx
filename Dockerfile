@@ -17,8 +17,8 @@ ENV VERTICLE_NAME=io.vertx.sample.hello.HelloVerticle \
     VERTICLE_HOME=/usr/verticles
 
 # Copy your verticle to the container
-COPY $VERTICLE_FILE $VERTICLE_HOME/ \
-     files/entrypoint.sh $VERTICLE_HOME/
+COPY $VERTICLE_FILE $VERTICLE_HOME/ 
+COPY files/entrypoint.sh $VERTICLE_HOME/
 
 RUN apt-get clean && apt-get update \
     && apt-get install -y wget \
