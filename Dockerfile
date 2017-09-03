@@ -8,18 +8,17 @@
 FROM paperinik/rpi-maven:latest
 MAINTAINER Bruno Cantisano <bruno.cantisano@gmail.com>
 
-LABEL version latest
-LABEL description Vert.x 3.2.0 Container
-
-ENV VERTICLE_NAME io.vertx.sample.hello.HelloVerticle
-ENV VERTICLE_FILE target/hello-verticle-3.2.0.jar
+LABEL version latest \
+      && description Vert.x 3.2.0 Container
 
 # Set the location of the verticles
-ENV VERTICLE_HOME /usr/verticles
+ENV VERTICLE_NAME=io.vertx.sample.hello.HelloVerticle \
+    && VERTICLE_FILE=target/hello-verticle-3.2.0.jar \
+    && VERTICLE_HOME=/usr/verticles
 
 # Copy your verticle to the container
-COPY $VERTICLE_FILE $VERTICLE_HOME/
-COPY files/entrypoint.sh $VERTICLE_HOME/
+COPY $VERTICLE_FILE $VERTICLE_HOME/ \
+     && files/entrypoint.sh $VERTICLE_HOME/
 
 RUN apt-get clean && apt-get update \
     && apt-get install -y wget \
