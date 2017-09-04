@@ -33,11 +33,11 @@ RUN apt-get clean && apt-get update \
 
 EXPOSE 3000
 
-VOLUME $VERTICLE_HOME
-
 # Launch the verticle
 WORKDIR $VERTICLE_HOME
 
-ENTRYPOINT ["$VERTICLE_HOME/entrypoint.sh"]
+VOLUME $VERTICLE_HOME
+
+ENTRYPOINT ["./entrypoint.sh"]
 
 CMD ["app:server"]

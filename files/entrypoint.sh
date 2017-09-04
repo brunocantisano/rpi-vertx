@@ -3,6 +3,11 @@ set -e
 
 trap appStop SIGINT SIGTERM
 
+# Variables
+VERTICLE_HOME=${VERTICLE_HOME:-/usr/verticles}
+VERTICLE_NAME=${VERTICLE_NAME:-io.vertx.sample.hello.HelloVerticle}
+VERTICLE_FILE=${VERTICLE_FILE:-target/hello-verticle-3.2.0.jar}
+
 appCompile () {
   set +e
   echo "Creating vertx app..."
@@ -16,7 +21,7 @@ appStop () {
 appServer () {
   set +e
   echo "Starting server..."
-  exec vertx run $VERTICLE_NAME -cp $VERTICLE_HOME/*
+  exec vertx run ${VERTICLE_NAME} -cp ${VERTICLE_HOME}/*
   tail -f /dev/null
 }
 
